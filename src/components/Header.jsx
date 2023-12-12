@@ -7,7 +7,7 @@ const NavBarLink = ({ href, onClick, children }) => {
     <Link
       to={href}
       onClick={onClick}
-      className="transition-all duration-300 hover:bg-gray-100 hover:text-red-500"
+      className="font-bold transition-all duration-300 hover:bg-gray-100 hover:text-red-500"
     >
       {children}
     </Link>
@@ -55,9 +55,16 @@ const Header = () => {
             <ul class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium rtl:space-x-reverse dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900">
               {isLogged ? (
                 <li>
-                  <NavBarLink onClick={handleLogOut}>Logout</NavBarLink>
+                  <NavBarLink onClick={handleLogOut}>Log Out</NavBarLink>
                 </li>
-              ) : null}
+              ) : (
+                <Link
+                  to="/login"
+                  className="font-bold transition-all duration-300 hover:bg-gray-100 hover:text-red-500"
+                >
+                  Log In
+                </Link>
+              )}
 
               <li>
                 <Link
